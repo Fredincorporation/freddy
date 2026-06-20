@@ -16,6 +16,9 @@ const fadeIn = {
 export default function Page() {
   return (
     <div style={{ position: 'relative', minHeight: '100vh', overflowX: 'hidden' }}>
+      <head>
+        <meta name="google-site-verification" content="zHksZXGTpV8FwIAcR8Wdx6EN5ivhAQ_hqGmR_JeBOKo" />
+      </head>
       <MeshBackground />
 
       <main className="container" style={{ position: 'relative', zIndex: 10 }}>
