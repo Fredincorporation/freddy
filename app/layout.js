@@ -40,6 +40,9 @@ export const metadata = {
   alternates: {
     canonical: 'https://frederly.vercel.app',
   },
+  verification: {
+    google: 'zHksZXGTpV8FwIAcR8Wdx6EN5ivhAQ_hqGmR_JeBOKo',
+  },
 }
 
 export default function RootLayout({ children }) {
