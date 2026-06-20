@@ -12,48 +12,13 @@ const fadeIn = {
 }
 
 /**
- * The 30/70 model: of the client's total monthly budget,
- * 30% is the guaranteed baseline (ops, staffing, platform),
- * 70% is performance-contingent (only paid if KPIs are met).
+ * The 30/70 model: a straight split of gross profit.
+ * - 30% of gross profit to the Service Provider (us)
+ * - 70% of gross profit to the Client / Partner (you)
  *
- * Under a flat $5k retainer, 100% is paid regardless of outcomes.
- * Under 30/70, if performance targets are missed, the client
- * only pays the 30% baseline — significantly less risk.
+ * No monthly budgets, no retainer math, no performance target jargon —
+ * just a clean percentage share of gross profit.
  */
-const SCENARIOS = [
-  {
-    monthlyBudget: 10000,
-    flatRetainer: 5000,
-    baseline30: 3000,
-    performance70: 7000,
-    paidIfKpisMissed: 3000,
-    savedVsFlat: '$2,000 saved when KPIs are not met',
-  },
-  {
-    monthlyBudget: 15000,
-    flatRetainer: 5000,
-    baseline30: 4500,
-    performance70: 10500,
-    paidIfKpisMissed: 4500,
-    savedVsFlat: '$500 saved when KPIs are not met',
-  },
-  {
-    monthlyBudget: 20000,
-    flatRetainer: 5000,
-    baseline30: 6000,
-    performance70: 14000,
-    paidIfKpisMissed: 6000,
-    savedVsFlat: 'Comparable — but 70% is results-driven',
-  },
-  {
-    monthlyBudget: 30000,
-    flatRetainer: 5000,
-    baseline30: 9000,
-    performance70: 21000,
-    paidIfKpisMissed: 9000,
-    savedVsFlat: 'Higher ceiling — you only pay for performance',
-  },
-]
 
 export default function ComparisonContent() {
   return (
@@ -94,50 +59,18 @@ export default function ComparisonContent() {
             </h2>
           </motion.div>
 
-          <div className="overflow-x-auto mt-8">
-            <table className="w-full text-sm border-collapse">
-              <thead>
-                <tr className="border-b-2 border-[var(--border-bold)]">
-                  <th className="text-left py-3 px-4 font-bold text-[var(--text)]">Monthly Budget</th>
-                  <th className="text-left py-3 px-4 font-bold text-[var(--text)]">Flat Retainer (100% due)</th>
-                  <th className="text-left py-3 px-4 font-bold text-[var(--text)]">30/70 Baseline (30%)</th>
-                  <th className="text-left py-3 px-4 font-bold text-[var(--text)]">30/70 Performance (70%)</th>
-                  <th className="text-left py-3 px-4 font-bold text-[var(--accent-4)]">If KPIs Missed</th>
-                </tr>
-              </thead>
-              <tbody>
-                {SCENARIOS.map((s, i) => (
-                  <tr key={i} className="border-b border-[var(--border)] hover:bg-[var(--card-hover)] transition-colors">
-                    <td className="py-3 px-4 font-bold">${s.monthlyBudget.toLocaleString()}</td>
-                    <td className="py-3 px-4 text-[var(--text-secondary)]">
-                      ${s.flatRetainer.toLocaleString()}
-                      <span className="block text-[0.6rem] text-[#ef4444] opacity-70">100% paid regardless</span>
-                    </td>
-                    <td className="py-3 px-4 text-[var(--accent-4)] font-bold">
-                      ${s.baseline30.toLocaleString()}
-                      <span className="block text-[0.6rem] text-[var(--text-secondary)] font-normal">Guaranteed</span>
-                    </td>
-                    <td className="py-3 px-4 text-[var(--accent-1)]">
-                      ${s.performance70.toLocaleString()}
-                      <span className="block text-[0.6rem] text-[var(--text-secondary)] font-normal">Only if KPIs met</span>
-                    </td>
-                    <td className="py-3 px-4 text-[var(--accent-4)] text-xs font-semibold">
-                      Pay ${s.paidIfKpisMissed.toLocaleString()}
-                      <span className="block text-[0.55rem] text-[var(--text-secondary)] font-normal">{s.savedVsFlat}</span>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+          <div className="mt-8">
+            <div className="card" style={{ padding: 24 }}>
+              <h3 className="section-title" style={{ fontSize: '1.1rem', marginBottom: 8 }}>Simple split — no budgets, no targets</h3>
+              <p className="text-sm text-[var(--text-secondary)] max-w-3xl leading-relaxed">
+                This is a straight split of gross profit: <strong>30% to us</strong>, <strong>70% to you</strong>.
+                There are no monthly-budget scenarios, no hidden retainers, and no confusing "targets" to qualify payment.
+              </p>
+              <p className="mt-4 text-sm text-[var(--text-secondary)]">
+                Example: if gross profit for a period is $10,000, the split is $3,000 to the Service Provider and $7,000 to the Partner.
+              </p>
+            </div>
           </div>
-
-          <p className="mt-6 text-sm text-[var(--text-secondary)] max-w-3xl leading-relaxed">
-            <strong className="text-[var(--text)]">The key insight:</strong> With a flat $5k retainer, 
-            you pay $5k every month no matter what. With the 30/70 model, if performance targets aren't 
-            met, you only pay the 30% baseline. At a $10k/mo budget that means you save $2,000 in months 
-            where results aren't delivered. And when KPIs <em>are</em> exceeded, both parties share in the 
-            upside — because the 70% allocation funds the growth engine that made it happen.
-          </p>
         </section>
 
         {/* ---- Why Retainers Fail ---- */}

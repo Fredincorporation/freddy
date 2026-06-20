@@ -17,8 +17,7 @@ const FLAT_FEATURES = [
 ]
 
 const PERF_FEATURES = [
-  '30% baseline covers operations & testing',
-  '70% performance share tied to real KPIs',
+  '30% of gross profit to the Service Provider; 70% to the Partner',
   'Full transparency with live dashboards',
   'Budget reallocated dynamically to best channels',
   'Shared risk — provider only earns on results',
@@ -47,7 +46,7 @@ export default function Pipeline() {
         <div className="card pipeline-card" style={{ borderColor: 'var(--accent-1)' }}>
           <span className="badge badge-performance">30/70 Model</span>
           <h3>Performance Partnership</h3>
-          <p className="sub">We only win when you win.</p>
+          <p className="sub">We only earn from gross profit — aligned incentives.</p>
           <ul>
             {PERF_FEATURES.map((f, i) => (
               <li key={i}>
@@ -62,18 +61,18 @@ export default function Pipeline() {
       <motion.div className="steps" {...fadeUp}>
         <div className="card step-card">
           <div className="step-number" style={{ color: 'var(--accent-1)' }}>01</div>
-          <h4>Baseline: 30%</h4>
-          <p>Secures operations, platform access, and baseline staffing. No frills — just the essentials to keep things running.</p>
+          <h4>Pure Percentage Split</h4>
+          <p>We split gross profit: 30% to the Service Provider, 70% to the Partner. No retainers, no monthly budget tiers, no target gates.</p>
         </div>
         <div className="card step-card">
           <div className="step-number" style={{ color: 'var(--accent-2)' }}>02</div>
-          <h4>Performance: 70%</h4>
-          <p>Funds high-impact experiments, ad spend, and creative testing. Allocated based on what&rsquo;s actually working.</p>
+          <h4>Aligned Incentives</h4>
+          <p>We only earn when you earn — that drives decisions toward profit, not billable hours.</p>
         </div>
         <div className="card step-card">
           <div className="step-number" style={{ color: 'var(--accent-3)' }}>03</div>
-          <h4>Continuous Optimization</h4>
-          <p>Real-time measurement drives reallocation to the highest-performing channels. Your budget adapts, not stagnates.</p>
+          <h4>Transparent Settlement</h4>
+          <p>Gross profit calculation is documented and auditable; payouts are split per the agreed percentage.</p>
         </div>
       </motion.div>
     </>

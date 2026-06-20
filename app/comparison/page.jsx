@@ -2,13 +2,13 @@ import { articleSchema } from '../../lib/schema'
 import ComparisonContent from './ComparisonContent'
 
 export const metadata = {
-  title: 'Fixed Agency Fees Are Dead — Why 30/70 Profit Share Outperforms Retainers',
+  title: '30/70 Profit Share — Simple Gross-Profit Split (30% / 70%)',
   description:
-    'Compare flat-rate agency pricing ($5k+/mo retainer) vs a 30/70 revenue share model. See the math on why performance-aligned partnerships deliver better ROI for e-commerce brands.',
+    'A straight 30/70 split of gross profit: 30% to the Service Provider, 70% to the Partner. No retainers, no monthly budget tiers, no target gates.',
   openGraph: {
-    title: 'Fixed Agency Fees Are Dead — 30/70 vs Retainer Comparison',
+    title: '30/70 Profit Share — Straight Gross-Profit Split',
     description:
-      'See the math. A $5,000/month retainer vs 30/70 profit share: which model actually grows your business?',
+      'We split gross profit 30% / 70% — clear, auditable, and aligned incentives for e-commerce partners.',
   },
   alternates: {
     canonical: 'https://frederly.vercel.app/comparison',
@@ -17,9 +17,9 @@ export const metadata = {
 
 export default function ComparisonPage() {
   const schema = articleSchema({
-    headline: 'Fixed Agency Fees Are Dead: Why a 30/70 Profit Split Outperforms a $5,000 Web Design Retainer',
+    headline: '30/70 Profit Share — Simple Gross-Profit Split',
     description:
-      'An honest mathematical comparison of flat-fee agency pricing vs performance-based 30/70 revenue share for e-commerce development.',
+      'A clear explanation of a 30% / 70% gross-profit split: how it works, settlement, and auditability.',
   })
 
   return (

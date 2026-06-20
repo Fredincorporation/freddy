@@ -1,6 +1,7 @@
 "use client"
 import { motion } from 'framer-motion'
 import MeshBackground from '../../../components/MeshBackground'
+import BackToHome from '../../../components/BackToHome'
 import Pipeline from '../../../components/Pipeline'
 import TerminalContract from '../../../components/TerminalContract'
 import SocialNodes from '../../../components/SocialNodes'
@@ -103,7 +104,10 @@ export default function NicheLanding({ niche, slug }) {
           <motion.div {...fadeIn} className="card" style={{ padding: '40px 36px' }}>
             <div className="section-label" style={{ marginBottom: 8 }}>Connect</div>
             <h2 className="section-title" style={{ marginBottom: 12 }}>Reach out</h2>
-            <SocialNodes />
+            <div className="flex items-center gap-4">
+              <BackToHome />
+              <SocialNodes />
+            </div>
           </motion.div>
         </section>
 

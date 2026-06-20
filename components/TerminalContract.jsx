@@ -5,7 +5,7 @@ import { motion } from 'framer-motion'
 const CLAUSES = [
   {
     title: '1. Parties',
-    body: '1.1 "Client" refers to the individual or entity receiving services under this Agreement.\n1.2 "Service Provider" refers to the agency, firm, or individual delivering the services described herein.',
+    body: 'Client: the individual or entity receiving services under this Agreement.\n\nService Provider: the company or contractor providing performance-aligned services under this Agreement.\n\nEach Party may be referred to individually as a "Party" and collectively as the "Parties."',
   },
   {
     title: '2. Purpose',
@@ -21,15 +21,15 @@ const CLAUSES = [
   },
   {
     title: '5. Compensation & Payment Structure',
-    body: '5.1 Baseline Allocation (30%): The Client pays a baseline monthly retainer equal to 30% of the agreed total monthly budget. This covers core operations, minimum resource allocation, platform access, and guaranteed baseline staffing.\n\n5.2 Performance Allocation (70%): 70% of the monthly budget is designated as the performance allocation. Payment is contingent upon agreed-upon performance metrics.\n\n5.3 Invoices: Baseline invoices at the start of each period. Performance invoices monthly in arrears with calculation details.\n\n5.4 Payment Terms: All invoices due within 30 days of receipt. Late payments accrue interest at the lesser of 1.5% per month or the maximum permitted by law.',
+    body: '5.1 Gross-Profit Split: Compensation is calculated as a percentage split of gross profit for the agreed settlement period. The Parties agree to a 30% share to the Service Provider and a 70% share to the Client (the Partner).\n\n5.2 Settlement: Gross profit is calculated per the agreed accounting and attribution methodology (see Section 6). Payouts are settled monthly (or per the agreed payment cadence) with line-item calculation details provided.\n\n5.3 Invoices: The Service Provider issues settlement statements and invoices reflecting the Service Provider share. Invoices are due within 30 days of issuance. Late payments accrue interest at the lesser of 1.5% per month or the maximum permitted by law.',
+  },
+    {
+    title: '6. Gross-Profit Calculation & Measurement',
+    body: '6.1 Gross-Profit Definition: Gross profit for settlement purposes is defined in the SOW and includes revenue less agreed direct costs (e.g., refunds, transaction fees, agreed COGS). Parties must agree any adjustments in writing.\n\n6.2 Measurement & Attribution: Measurement data sources, attribution windows, and reporting dashboards will be documented and mutually agreed. Parties will use transparent instrumentation to calculate gross profit.\n\n6.3 Calculation Methodology: The Service Provider will provide line-item calculations supporting the gross-profit figure used for settlement. Disputes follow the audit procedure in Section 7.\n\n6.4 Allocation: Following calculation, the gross-profit split is applied: 30% to the Service Provider, 70% to the Client.',
   },
   {
-    title: '6. Performance Metrics & Calculation',
-    body: '6.1 KPIs: Mutually agreed KPIs included in the SOW — qualified leads, conversion rate improvements, revenue uplift, ROAS, CAC improvements, or other objective outcomes.\n\n6.2 Measurement: Transparent dashboards and documented instrumentation. Parties agree on data sources and attribution windows.\n\n6.3 Performance Fee Calculation: The performance allocation is applied to channels and experiments. The fee is calculated based on observed KPI deltas relative to baseline forecasts. If targets are exceeded, the fee is the agreed share of surplus value. If not met, the remediation process in Section 7 applies.',
-  },
-  {
-    title: '7. Remediation & Adjustments',
-    body: 'If performance falls materially below thresholds, the Service Provider proposes corrective actions at no additional baseline cost. Either Party may trigger a review and renegotiation of KPIs. Performance calculations are subject to audit with reasonable notice.',
+    title: '7. Disputes, Audit & Adjustments',
+    body: 'If either Party disputes the gross-profit calculation, the raising Party must provide written notice with supporting evidence within 14 days of settlement. Parties agree to a good-faith audit process with reasonable notice and access to documentation. Adjustments from an audit, if any, will be reflected in the next settlement cycle or as otherwise agreed.',
   },
   {
     title: '8. Intellectual Property',
