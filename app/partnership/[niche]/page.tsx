@@ -149,7 +149,7 @@ export default async function PartnershipNichePage({ params }: { params: Params 
             </article>
 
             <article className="p-8 bg-black/60 border border-emerald-800 rounded-xl shadow-xl">
-              <h2 className="text-2xl font-semibold text-black dark:text-emerald-200">What You Should Expect</h2>
+              <h2 className="text-2xl font-semibold text-[var(--text)]">What You Should Expect</h2>
               <div className="mt-4 text-emerald-100 space-y-3">
                 <p>
                   We eliminate costly agency retainers, manual order tracking, and poor search visibility.

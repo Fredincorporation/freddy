@@ -103,10 +103,10 @@ export default function IntakeSections() {
             <span className="inline-block text-[0.7rem] font-bold tracking-[2.5px] uppercase text-accent-2 mb-3 px-4 py-1.5 border border-[rgba(125,211,252,0.3)] rounded-full">
               Onboarding Prerequisites
             </span>
-            <h2 className="text-[clamp(28px,4vw,44px)] font-extrabold leading-[1.05] text-[#f1f5f9]">
+            <h2 className="text-[clamp(28px,4vw,44px)] font-extrabold leading-[1.05] text-[var(--text)]">
               What Is Required From You
             </h2>
-            <p className="mt-3 text-[clamp(15px,1.6vw,18px)] text-[#94a3b8] max-w-xl leading-relaxed">
+            <p className="mt-3 text-[clamp(15px,1.6vw,18px)] text-[var(--text-secondary)] max-w-xl leading-relaxed">
               The Prerequisite Blueprint — every partner must satisfy these absolute requirements before architecture engineering begins.
             </p>
           </motion.div>
@@ -127,10 +127,10 @@ export default function IntakeSections() {
                     {String(i + 1).padStart(2, '0')}
                   </div>
                   <div className="flex-1 min-w-0">
-                    <h3 className="text-[#f1f5f9] font-bold text-base mb-1.5 group-hover:text-emerald-300 transition-colors duration-300">
+                    <h3 className="text-[var(--text)] font-bold text-base mb-1.5 group-hover:text-emerald-300 transition-colors duration-300">
                       {item.title}
                     </h3>
-                    <p className="text-[#94a3b8] text-sm leading-relaxed">
+                    <p className="text-[var(--text-secondary)] text-sm leading-relaxed">
                       {item.desc}
                     </p>
                   </div>
@@ -151,10 +151,10 @@ export default function IntakeSections() {
             <span className="inline-block text-[0.7rem] font-bold tracking-[2.5px] uppercase text-accent-2 mb-3 px-4 py-1.5 border border-[rgba(125,211,252,0.3)] rounded-full">
               Delivery Pipeline
             </span>
-            <h2 className="text-[clamp(28px,4vw,44px)] font-extrabold leading-[1.05] text-[#f1f5f9]">
+            <h2 className="text-[clamp(28px,4vw,44px)] font-extrabold leading-[1.05] text-[var(--text)]">
               What You Should Expect
             </h2>
-            <p className="mt-3 text-[clamp(15px,1.6vw,18px)] text-[#94a3b8] max-w-xl leading-relaxed">
+            <p className="mt-3 text-[clamp(15px,1.6vw,18px)] text-[var(--text-secondary)] max-w-xl leading-relaxed">
               The Strategic Delivery Pipeline — high-value milestones and execution standards you will experience through the partnership.
             </p>
           </motion.div>
@@ -174,10 +174,10 @@ export default function IntakeSections() {
                     {String(i + 1).padStart(2, '0')}
                   </div>
                   <div className="flex-1 min-w-0">
-                    <h3 className="text-[#f1f5f9] font-bold text-base mb-1.5 group-hover:text-accent-1 transition-colors duration-300">
+                    <h3 className="text-[var(--text)] font-bold text-base mb-1.5 group-hover:text-accent-1 transition-colors duration-300">
                       {item.title}
                     </h3>
-                    <p className="text-[#94a3b8] text-sm leading-relaxed">
+                    <p className="text-[var(--text-secondary)] text-sm leading-relaxed">
                       {item.desc}
                     </p>
                   </div>
