@@ -10,6 +10,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   // If Supabase env isn't set (e.g. during some prerender/build environments),
   // return a minimal static sitemap so prerendering doesn't fail.
   if (!supabaseUrl || !supabaseKey) {
+    console.warn('sitemap: Supabase env missing, returning static sitemap fallback')
     return [
       {
         url: baseUrl,
@@ -64,6 +65,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       ...dynamicPages,
     ]
   } catch (err) {
+    console.error('sitemap: error querying Supabase, returning static sitemap fallback', err)
     return [
       {
         url: baseUrl,
