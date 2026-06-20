@@ -4,14 +4,12 @@ import { createClient } from '@supabase/supabase-js'
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = 'https://freddy-sepia.vercel.app'
 
-  const supabase = createClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.SUPABASE_SERVICE_ROLE_KEY!
-  )
+  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL
+  const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY
 
-  const { data: niches, error } = await supabase.from('niches').select('slug')
-  if (error) {
-    // Return the core pages even if the DB query fails
+  // If Supabase env isn't set (e.g. during some prerender/build environments),
+  // return a minimal static sitemap so prerendering doesn't fail.
+  if (!supabaseUrl || !supabaseKey) {
     return [
       {
         url: baseUrl,
@@ -22,20 +20,57 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ]
   }
 
-  const dynamicPages = (niches || []).map((niche: any) => ({
-    url: `${baseUrl}/partnership/${niche.slug}`,
-    lastModified: new Date(),
-    changeFrequency: 'weekly' as const,
-    priority: 0.8,
-  }))
+  let supabase
+  try {
+    supabase = createClient(supabaseUrl, supabaseKey)
+  } catch (err) {
+    return [
+      {
+        url: baseUrl,
+        lastModified: new Date(),
+        changeFrequency: 'daily',
+        priority: 1.0,
+      },
+    ]
+  }
 
-  return [
-    {
-      url: baseUrl,
+  try {
+    const { data: niches, error } = await supabase.from('niches').select('slug')
+    if (error || !niches) {
+      return [
+        {
+          url: baseUrl,
+          lastModified: new Date(),
+          changeFrequency: 'daily',
+          priority: 1.0,
+        },
+      ]
+    }
+
+    const dynamicPages = (niches || []).map((niche: any) => ({
+      url: `${baseUrl}/partnership/${niche.slug}`,
       lastModified: new Date(),
-      changeFrequency: 'daily',
-      priority: 1.0,
-    },
-    ...dynamicPages,
-  ]
+      changeFrequency: 'weekly' as const,
+      priority: 0.8,
+    }))
+
+    return [
+      {
+        url: baseUrl,
+        lastModified: new Date(),
+        changeFrequency: 'daily',
+        priority: 1.0,
+      },
+      ...dynamicPages,
+    ]
+  } catch (err) {
+    return [
+      {
+        url: baseUrl,
+        lastModified: new Date(),
+        changeFrequency: 'daily',
+        priority: 1.0,
+      },
+    ]
+  }
 }
