@@ -21,6 +21,11 @@ interface NichePayload {
 
 async function getAllNiches(): Promise<string[]> {
   try {
+    if (!supabase) {
+      console.warn('Supabase client not configured; getAllNiches returning empty list.');
+      return [];
+    }
+
     const { data, error } = await supabase
       .from('niches')
       .select('slug')
@@ -40,6 +45,11 @@ async function getAllNiches(): Promise<string[]> {
 
 async function getNicheData(slug: string): Promise<NichePayload | null> {
   try {
+    if (!supabase) {
+      console.warn('Supabase client not configured; getNicheData returning null for', slug);
+      return null;
+    }
+
     const { data, error } = await supabase
       .from('niches')
       .select('id, slug, title, industry, description, pain_point')
