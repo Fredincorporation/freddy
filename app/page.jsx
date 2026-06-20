@@ -37,8 +37,8 @@ export default function Page() {
               <a className="btn btn-primary" href="#contract">
                 View contract
               </a>
-              <a className="btn btn-secondary" href="#pipeline">
-                See data flow
+              <a className="btn btn-secondary" href="/comparison">
+                See the math →
               </a>
             </div>
           </motion.div>
@@ -76,7 +76,16 @@ export default function Page() {
 
         {/* ---- Footer ---- */}
         <footer className="footer">
-          &copy; {new Date().getFullYear()} Creative Technologist — Built for conversion.
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-6 mb-4 text-xs text-[var(--text-secondary)]">
+            <span>&copy; {new Date().getFullYear()} Creative Technologist</span>
+            <span className="hidden sm:inline w-px h-3 bg-[var(--border)]" />
+            <a href="/comparison" className="hover:text-[var(--accent-2)] transition-colors">Fixed Fees Are Dead</a>
+            <span className="hidden sm:inline w-px h-3 bg-[var(--border)]" />
+            <a href="/niche/fashion" className="hover:text-[var(--accent-2)] transition-colors">Fashion</a>
+            <a href="/niche/electronics" className="hover:text-[var(--accent-2)] transition-colors">Electronics</a>
+            <a href="/niche/wholesale" className="hover:text-[var(--accent-2)] transition-colors">Wholesale</a>
+          </div>
+          <p className="text-[0.65rem] uppercase tracking-[2px]">Built for conversion.</p>
         </footer>
 
       </main>
