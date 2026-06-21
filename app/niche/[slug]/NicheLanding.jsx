@@ -5,6 +5,7 @@ import BackToHome from '../../../components/BackToHome'
 import Pipeline from '../../../components/Pipeline'
 import TerminalContract from '../../../components/TerminalContract'
 import SocialNodes from '../../../components/SocialNodes'
+import ExploreOtherMarkets from '../../../components/ExploreOtherMarkets'
 
 const fadeIn = {
   initial: { opacity: 0, y: 30 },
@@ -109,6 +110,11 @@ export default function NicheLanding({ niche, slug }) {
               <SocialNodes />
             </div>
           </motion.div>
+        </section>
+
+        {/* ---- Explore other markets (random links) ---- */}
+        <section className="section">
+          <ExploreOtherMarkets currentSlug={slug} />
         </section>
 
         <footer className="footer">

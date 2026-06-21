@@ -87,6 +87,7 @@ export default function Page() {
             <a href="/niche/fashion" className="hover:text-[var(--accent-2)] transition-colors">Fashion</a>
             <a href="/niche/electronics" className="hover:text-[var(--accent-2)] transition-colors">Electronics</a>
             <a href="/niche/wholesale" className="hover:text-[var(--accent-2)] transition-colors">Wholesale</a>
+            <a href="/partnership" className="hover:text-[var(--accent-2)] transition-colors">Partnerships</a>
           </div>
           <p className="text-[0.65rem] uppercase tracking-[2px]">Built for conversion.</p>
         </footer>
