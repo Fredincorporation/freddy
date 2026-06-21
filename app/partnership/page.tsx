@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import '../../styles/globals.css'
 import { supabase } from '../../lib/supabase'
 
 export const revalidate = 3600
